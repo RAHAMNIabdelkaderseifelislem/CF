@@ -65,7 +65,7 @@ print(fixedPoint(g1, x0, eps))
 the output is:
 
 ```python
-0.1379
+0.13795010129164942
 ```
 
 we can summarize the results in a table:
