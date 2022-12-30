@@ -19,26 +19,24 @@ We want to solve the equation $\log(x) - x^2 + 2 = 0$.
 
 2. we can verify that $|{g'(x)}|<1$ for all $x$ in the domain of $g(x)$ as we can see in the following graph:
 
-```{r}
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-library(magrittr)
+```python
+import matplotlib.pyplot as plt
+import numpy as np
 
-x <- seq(-10, 10, length.out = 1000)
-g1 <- function(x) exp(x^2 - 2)
-g2 <- function(x) sqrt(log(x) + 2)
-g3 <- function(x) -sqrt(log(x) + 2)
+def g1(x):
+    return np.exp(x**2 - 2)
 
-df <- data.frame(x = x, g1 = g1(x), g2 = g2(x), g3 = g3(x)) %>%
-  gather(key = "g", value = "y", g1, g2, g3)
+def g2(x):
+    return np.sqrt(np.log(x) + 2)
 
-ggplot(df, aes(x = x, y = y)) +
-    geom_line(aes(color = g)) +
-    geom_hline(yintercept = 0, linetype = "dashed") +
-    geom_vline(xintercept = 0, linetype = "dashed") +
-    scale_color_discrete(name = "g(x)") +
-    labs(title = "g(x) functions", x = "x", y = "y") +
-    theme_bw()
-    ```
-    
+def g3(x):
+    return -np.sqrt(np.log(x) + 2)
+
+x = np.linspace(0, 2, 100)
+plt.plot(x, g1(x), label='g1')
+plt.plot(x, g2(x), label='g2')
+plt.plot(x, g3(x), label='g3')
+plt.plot(x, x, label='x')
+plt.legend()
+plt.show()
+```
