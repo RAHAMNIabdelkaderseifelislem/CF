@@ -40,3 +40,38 @@ plt.plot(x, x, label='x')
 plt.legend()
 plt.show()
 ```
+
+3. we can choose an initial value $x_0$ and a tolerance $\epsilon$
+
+```python
+x0 = 0.3
+eps = 0.001
+```
+
+4. we can repeat until $|{x_{n+1}-x_n}|<\epsilon$:
+
+```python
+def fixedPoint(g, x0, eps):
+    x = x0
+    while True:
+        x1 = g(x)
+        if abs(x1 - x) < eps:
+            return x1
+        x = x1
+# we choosed only g1 as it converges the fastest
+print(fixedPoint(g1, x0, eps))
+```
+
+the output is:
+
+```python
+0.1379
+```
+
+we can summarize the results in a table:
+
+| $n$ | $x_n$ | $g(x_n)$ | $|{x_{n+1}-x_n}|$ |
+| --- | ----- | -------- | ---------------- |
+| 0 | 0.3 | 0.148 | 0.152 |
+| 1 | 0.148 | 0.138 | 0.011 |
+| 2 | 0.138 | 0.1379 | 0.001 |
