@@ -14,5 +14,5 @@ We want to solve the equation $\log(x) - x^2 + 2 = 0$.
 
 1. we can define various $g(x)$ functions
     1. $g_1(x)=\exp(x^2 - 2)$
-    2. $g_2(x)=\sqrt\log(x) + 2$
+    2. $g_2(x)=\sqrt {\log(x) + 2}$
     
