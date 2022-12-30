@@ -23,3 +23,16 @@ plt.plot(x, g3(x), label='g3')
 plt.title('Fixed Point Iteration')
 plt.legend()
 plt.show()
+
+x0 = 0.3
+eps = 0.001
+
+def fixedPoint(g, x0, eps):
+    x = x0
+    while True:
+        x1 = g(x)
+        if abs(x1 - x) < eps:
+            return x1
+        x = x1
+# we choosed only g1 as it converges the fastest
+print(fixedPoint(g1, x0, eps))
