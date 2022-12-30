@@ -93,3 +93,7 @@ plt.plot(x, df(x)*(x-x0) + f(x0) + eps)
 
 plt.show()
 ```
+
+result:
+
+![newtonRaphson](Figure_1.png)
