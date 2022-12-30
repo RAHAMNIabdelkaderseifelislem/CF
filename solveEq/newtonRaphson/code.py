@@ -18,7 +18,7 @@ def df(x):
 x0 = 0.3
 eps = 0.001
 x = newtonRaphson(f, df, x0, eps)
-
+print(x)
 x = np.linspace(0.1, 1, 100)
 y = f(x)
 plt.plot(x, y)

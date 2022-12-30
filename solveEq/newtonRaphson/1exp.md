@@ -51,7 +51,7 @@ print(x)
 result:
 
 ```python
-0.5671432904097838
+0.13793433798328367
 ```
 
 ## Convergence
